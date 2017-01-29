@@ -33,7 +33,7 @@ public class Person4 {
         String temp = "";
         for (int i = 0; i < input.length(); i++) {
 
-            temp += input.charAt(i) + 1;
+            temp = temp + (char)(input.charAt(i) + 1);
         }
         return temp;
     }
