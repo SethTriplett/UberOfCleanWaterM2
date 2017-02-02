@@ -1,0 +1,33 @@
+//Author: striplett6
+
+//defaults to jar task
+defaultTasks "jar"
+
+apply plugin: "java"
+
+version = "1.0"
+
+jar {
+    manifest {
+        attributes  "Implementation-Title" : "Gradle Build",
+                    "Implementation-Version" : version,
+                    "Main-Class" : "edu.gatech.oad.antlab.pkg1.AntLabMain",
+                    "Class-Path" : "../../lib/resources.jar"
+
+    }
+    archiveName = "antLabMain.jar"
+}
+
+dependencies {
+    //compile name: "resources"
+    //runtime name: "resources"
+    //compile files("lib/resources.jar")
+    compile fileTree(dir: "lib", include: "*.jar")
+}
+/*
+repositories {
+    flatDir {
+        dir "lib"
+    }
+}
+*/
