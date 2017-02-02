@@ -1,0 +1,30 @@
+apply plugin: 'java'
+apply plugin: 'application'
+
+defaultTasks 'jar'
+
+sourceCompatibility = 1.8
+version = '1.0'
+mainClassName ='edu.gatech.oad.antlab.pkg1.AntLabMain'
+
+jar  {
+    manifest {
+        attributes  'Class-Path': 'lib/resources.jar',
+                'Implementation-Title' : 'Gradle Quickstart' ,
+                'Implementation-Version' : version,
+                'Main-Class' : 'edu.gatech.oad.antlab.pkg1.AntLabMain'
+
+    }
+    archiveName = 'rcostley6.jar'
+    destinationDir = file(".")
+}
+
+dependencies {
+    compile group: 'org.hibernate', name: 'hibernate-core', version: '3.6.7.Final'
+    compile files('lib/resources.jar')
+
+}
+
+repositories {
+    mavenCentral()
+}
