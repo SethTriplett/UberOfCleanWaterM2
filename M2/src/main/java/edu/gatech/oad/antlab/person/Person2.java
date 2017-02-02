@@ -30,9 +30,23 @@ public class Person2 {
 	 * @return the modified string
 	 */
 	private String calc(String input) {
-	  //Person 2 put your implementation here
-	  return null;
+		String result = "";
+	  boolean[] taken = new boolean[input.length()];
+	  for (int i = 0; i < input.length(); i++) {
+		taken[i] = false;
+	  }
+	  int i = 0;
+	  while (i < input.length()) {
+		int rand = (int) (Math.random() * input.length());
+		if (taken[rand]) {
+			i++;
+			result += input.charAt(rand);
+		}
+	  }
+
+	  return result;
 	}
+
 	/**
 	 * Return a string rep of this object
 	 * that varies with an input string
