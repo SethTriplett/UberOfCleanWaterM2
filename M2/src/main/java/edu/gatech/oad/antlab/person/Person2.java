@@ -38,7 +38,7 @@ public class Person2 {
 	  int i = 0;
 	  while (i < input.length()) {
 		int rand = (int) (Math.random() * input.length());
-		if (taken[rand]) {
+		if (!taken[rand]) {
 			i++;
 			result += input.charAt(rand);
 		}
